@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <!--Default: ${user.home}/.m2/repository-->
+    <localRepository>D:\DevProgram\Java\build\maven\localrepo</localRepository>
+    <interactiveMode>true</interactiveMode>
+    <offline>false</offline>
+    <pluginGroups></pluginGroups>
+    <proxies></proxies>
+    <servers></servers>
+    <mirrors>
+        <mirror>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+
+        <profile>
+            <id>local_maven</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <!--Maven设置编码-->
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>local_maven</activeProfile>
+    </activeProfiles>
+
+</settings>
